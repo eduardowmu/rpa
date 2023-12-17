@@ -45,27 +45,27 @@ def main():
     bot.browse("https://www.youtube.com/watch?v=1bJ4_FDIKy0&list=RDCMUCEmDI96PRniiegjkSmrpZaQ&index=27")
 
     # Implement here your logic...
+    while not bot.find( "unlike", matching=0.97, waiting_time=10000):
+        not_found("unlike")
+    bot.click()
     
-    if not bot.find( "views", matching=0.97, waiting_time=10000):
-        not_found("views")
-    bot.double_click_relative(-30, 13)
-    
-    #copia o texto desejado e depois mostra em terminal
-    bot.control_c()
-    numero_visualizacoes = bot.get_clipboard()
-    print(f"Visualizacoes: {numero_visualizacoes}")
+    while not bot.find( "like", matching=0.97, waiting_time=10000):
+        not_found("like")
+    bot.click()
+
     
 
-    # Uncomment to mark this task as finished on BotMaestro
-    # maestro.finish_task(
-    #     task_id=execution.task_id,
-    #     status=AutomationTaskFinishStatus.SUCCESS,
-    #     message="Task Finished OK."
-    # )
+    #Uncomment to mark this task as finished on BotMaestro
+    maestro.finish_task(
+        task_id=execution.task_id,
+        status=AutomationTaskFinishStatus.SUCCESS,
+        message="Task Finished OK."
+    )
 
 def not_found(label):
     print(f"Element not found: {label}")
 
 if __name__ == '__main__':
     main()
+
 
