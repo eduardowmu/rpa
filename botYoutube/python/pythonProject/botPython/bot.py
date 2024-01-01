@@ -1,6 +1,9 @@
 from botcity.document_processing import *
 import pathlib
+import pandas as pd
 
+
+# dados = []
 def readPDF(file):
     reader = PDFReader()
     parser = PDFReader().read_file(file)
@@ -21,7 +24,14 @@ def readPDF(file):
     value = parser.read(_balance_due, 1.113333, -1.714286, 1.4, 3.357143)
     print(f'Balance due: {value}\n')
 
+    # dados.append([date, bill_to, contact, balance_due])
+
 files = pathlib.Path(r'H:\Dados\MEU_PC\Meusdoc\UDEMY\RPA\repositorio\rpa\botYoutube\python\pythonProject\botPython\docs').glob('*.pdf')
 
 for file in files:
     readPDF(file)
+
+## data frame
+# df = pd.DataFrame(dados, columns=['Date', 'Bill to', 'Contact', 'Balance due'])
+## convertendo para CSV
+# df.to_csv('dados_pdf.csv', sep=',', index=False)
