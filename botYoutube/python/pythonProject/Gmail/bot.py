@@ -2,7 +2,7 @@
 from botcity.plugins.gmail import BotGmailPlugin
 
 #variável que receberá nossa credencial
-credentials = r"C:\Users\eduardowmu\Desktop\Meusdoc\UDEMY\client_secret_283443253844-rr9j29d8k73p2mshcg3b3bit7128bq4o.apps.googleusercontent.com.json"
+credentials = r"C:\Users\eduardowmu\Desktop\Meusdoc\UDEMY\"
 
 #recebe a instancia do nosso gmail plugin
 gmail = BotGmailPlugin(credentials, 'ewmurakoshi@gmail.com')
